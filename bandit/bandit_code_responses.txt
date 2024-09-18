@@ -1,0 +1,78 @@
+1. This focument contains the code I wrote, alongside passwords
+2. By Elhadji Amadou Touré for Computer Security & COMPS, Fall 2024, Carleton College
+3. Status Update: Currently working on Level #5
+4. Disclaimer: To ease the redaction of this document, generative AI was utilized (although not to solve any of the problems)
+
+#### Level 0 Code and Responses:
+
+```bash
+ssh -p 2222 bandit0@bandit.labs.overthewire.org
+Password: <entered password>
+```
+
+#### Level 1 Code and Responses:
+
+```bash
+bandit1@bandit:~$ ls
+readme
+
+bandit1@bandit:~$ cat readme
+Congratulations on your first steps into the bandit game!!
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+```
+
+#### Level 2 Code and Responses:
+
+```bash
+bandit2@bandit:~$ ls
+spaces in this filename
+
+bandit2@bandit:~$ cat "spaces in this filename"
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+```
+
+#### Level 3 Code and Responses:
+
+```bash
+bandit3@bandit:~$ ls -a
+.  ..  .bash_logout  .bashrc  inhere  .profile
+
+bandit3@bandit:~$ cat inhere
+cat: inhere: Is a directory
+
+bandit3@bandit:~$ cd inhere
+
+bandit3@bandit:~/inhere$ ls -a
+.  ..  ...Hiding-From-You
+
+bandit3@bandit:~/inhere$ cat ...Hiding-From-You
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+```
+
+#### Level 4 Code and Responses:
+
+```bash
+bandit4@bandit:~/inhere$ ls
+-file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09
+
+bandit4@bandit:~/inhere$ find . ! -executable
+./-file00
+./-file03
+./-file08
+./-file02
+./-file04
+./-file01
+./-file07
+./-file06
+./-file05
+./-file09
+
+bandit4@bandit:~/inhere$ cat ./-file00
+??,??????Yq??f?L???j?0????x?4F
+
+bandit4@bandit:~/inhere$ cat ./-file01
+N?.??
+
+bandit4@bandit:~/inhere$ cat ./-file07
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+```

@@ -76,3 +76,115 @@ N?.??
 bandit4@bandit:~/inhere$ cat ./-file07
 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 ```
+
+#### Level 5 Code and Responses:
+
+```bash
+bandit5@bandit:~$ ls
+inhere
+
+bandit5@bandit:~$ cd inhere
+
+bandit5@bandit:~/inhere$ find . -type f -readable ! -executable -size 1033c
+./maybehere07/.file2
+
+bandit5@bandit:~/inhere$ cat .file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+```
+
+---
+
+#### Level 6 Code and Responses:
+
+```bash
+bandit6@bandit:~$ ls
+bandit6@bandit:~$ ls -a
+.  ..  .bash_logout  .bashrc  .profile
+
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+/var/lib/dpkg/info/bandit7.password
+
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+```
+
+---
+
+#### Level 7 Code and Responses:
+
+```bash
+bandit7@bandit:~$ grep "millionth" data.txt
+millionth	dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+```
+
+---
+
+#### Level 8 Code and Responses:
+
+```bash
+bandit8@bandit:~$ sort data.txt | uniq -u
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+```
+
+---
+
+#### Level 9 Code and Responses:
+
+```bash
+bandit9@bandit:~$ strings data.txt | grep "===="
+\a!;========== the
+========== passwordf
+========== isc
+========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+```
+
+---
+
+#### Level 10 Code and Responses:
+
+```bash
+bandit10@bandit:~$ base64 -d data.txt
+The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+```
+
+---
+
+#### Level 11 Code and Responses:
+
+```bash
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+```
+
+---
+
+#### Level 12 Code and Responses:
+
+```bash
+bandit12@bandit:~$ mkdir /tmp/mydirtoure
+bandit12@bandit:~$ cp data.txt /tmp/mydirtoure
+bandit12@bandit:~$ cd /tmp/mydirtoure
+bandit12@bandit:/tmp/mydirtoure$ xxd -r data.txt > new
+bandit12@bandit:/tmp/mydirtoure$ file new
+new: gzip compressed data, was "data2.bin", last modified: Wed Jul 17 15:57:06 2024, max compression, from Unix, original size modulo 2^32 577
+bandit12@bandit:/tmp/mydirtoure$ mv new new.gz
+bandit12@bandit:/tmp/mydirtoure$ gunzip new.gz
+bandit12@bandit:/tmp/mydirtoure$ file new
+new: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/mydirtoure$ bunzip2 new
+bandit12@bandit:/tmp/mydirtoure$ file new.out
+new.out: gzip compressed data, was "data4.bin", last modified: Wed Jul 17 15:57:06 2024, max compression, from Unix, original size modulo 2^32 20480
+bandit12@bandit:/tmp/mydirtoure$ mv new.out new.gz
+bandit12@bandit:/tmp/mydirtoure$ gunzip new.gz
+bandit12@bandit:/tmp/mydirtoure$ file new
+new: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/mydirtoure$ tar -xf new
+bandit12@bandit:/tmp/mydirtoure$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/mydirtoure$ tar -xf data5.bin
+bandit12@bandit:/tmp/mydirtoure$ bunzip2 data6.bin
+bandit12@bandit:/tmp/mydirtoure$ file data8
+data8: ASCII text
+bandit12@bandit:/tmp/mydirtoure$ cat data8
+The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+```
